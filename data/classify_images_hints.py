@@ -79,7 +79,7 @@ def classify_images(images_dir, results_dic, model):
        #  Runs classifier function to classify the images classifier function 
        # inputs: path + filename  and  model, returns model_label 
        # as classifier label
-       model_label = ""
+       model_label = classifer(images_dir + key, model)
 
        # TODO: 3b. BELOW REPLACE pass with CODE to process the model_label to 
        #           convert all characters within model_label to lowercase 
@@ -89,7 +89,8 @@ def classify_images(images_dir, results_dic, model):
        #
        # Processes the results so they can be compared with pet image labels
        # set labels to lowercase (lower) and stripping off whitespace(strip)
-       pass
+       model_label = model_label.lower()
+       model_label = model_label.strip()
               
        # defines truth as pet image label 
        truth = results_dic[key][0]
